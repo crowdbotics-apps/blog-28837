@@ -6,36 +6,52 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home', '0003_auto_20210715_1745'),
+        ("home", "0003_auto_20210715_1745"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='App',
+            name="App",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=50)),
-                ('description', models.TextField()),
-                ('type', models.CharField(max_length=20)),
-                ('framework', models.CharField(max_length=20)),
-                ('domain_name', models.CharField(max_length=50)),
-                ('screenshot', models.URLField()),
-                ('subscription', models.IntegerField()),
-                ('user', models.IntegerField()),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=50)),
+                ("description", models.TextField()),
+                ("type", models.CharField(max_length=20)),
+                ("framework", models.CharField(max_length=20)),
+                ("domain_name", models.CharField(max_length=50)),
+                ("screenshot", models.URLField()),
+                ("subscription", models.IntegerField()),
+                ("user", models.IntegerField()),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
             ],
         ),
         migrations.CreateModel(
-            name='Subscription',
+            name="Subscription",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('user', models.IntegerField(verbose_name='home.App')),
-                ('plan', models.IntegerField()),
-                ('app', models.IntegerField()),
-                ('active', models.BooleanField()),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("user", models.IntegerField(verbose_name="home.App")),
+                ("plan", models.IntegerField()),
+                ("app", models.IntegerField()),
+                ("active", models.BooleanField()),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
             ],
         ),
     ]
